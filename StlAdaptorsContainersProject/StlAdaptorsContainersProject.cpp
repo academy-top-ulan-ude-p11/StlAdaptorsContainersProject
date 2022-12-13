@@ -105,6 +105,9 @@ string OpzCreate(string infExpresion, map<string, double> vars)
             {
                 varName.push_back(infExpresion[pos++]);
             }
+            // проверить если varName является названием функции...
+
+
             double value = vars[varName];
             opzExpresion.append(to_string(value));
             opzExpresion.push_back('#');
@@ -218,7 +221,7 @@ int main()
     vars.insert(make_pair("a", 24));
     vars.emplace("b", 5);
 
-    string infExpresion = "a / (b + 7)";
+    string infExpresion = "a / (cos(b) + 7)";
     
     
     string opz = OpzCreate(infExpresion, vars);
